@@ -186,6 +186,7 @@ export default {
             .Approved {
               background: green;
               padding: 5px 15px;
+              color: #fff;
             }
             .Rejected {
               background: red;

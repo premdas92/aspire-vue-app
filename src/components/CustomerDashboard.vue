@@ -11,6 +11,11 @@
       <div class="left">
         <h4>Loan Application</h4>
         <div class="form-wrapper">
+          <strong>Note :</strong>
+          <span class="msg">
+            Decimal amounts or decimal EMI values has not been handled. Kindly
+            enter the loan amount and loan tenure in multiples of 5 to get proper results</span
+          >
           <form>
             <div class="input-box">
               <label>Name</label>
@@ -159,7 +164,7 @@ export default {
           this.email = "";
           this.amount = "";
           this.tenure = "";
-           window.location.reload();
+          window.location.reload();
         })
         .catch(() => {
           alert("Something went wrong !!");
@@ -184,7 +189,8 @@ export default {
       axios
         .patch(`http://localhost:5000/loanApplicants/${items.id}`, {
           paidAmount: items.paidAmount + items.amount / items.loanTerm,
-          pendingAmount: items.pendingAmount - items.paidAmount,
+          pendingAmount:
+            items.amount - (items.paidAmount + items.amount / items.loanTerm),
         })
         .then((res) => {
           if (res.status === 200) {
@@ -237,11 +243,21 @@ export default {
           }
         }
       }
+      strong {
+        font-weight: bold;
+        font-size: 15px;
+        color: red;
+      }
+      .msg{
+        padding-bottom: 15px;
+        display: block;
+      }
     }
     .right {
       width: 40%;
       h4 {
         text-align: center;
+        margin-bottom: 20px;
       }
       .tracker-wrapper {
         box-shadow: 0 0 30px 0 rgba(68, 49, 49, 0.1);
@@ -264,6 +280,7 @@ export default {
             .Approved {
               background: green;
               padding: 5px 15px;
+              color: #fff;
             }
             .Rejected {
               background: red;
