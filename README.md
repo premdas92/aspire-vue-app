@@ -1,5 +1,10 @@
 # aspire-bank
 
+## Deployed project
+```
+https://brave-albattani-0b8688.netlify.app/
+```
+
 ## Project setup
 ```
 npm install
