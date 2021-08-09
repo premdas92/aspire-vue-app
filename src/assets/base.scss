@@ -1,0 +1,109 @@
+@import "../assets/mixins.scss";
+@import "../assets/colors.scss";
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap");
+
+html {
+  scroll-behavior: smooth;
+  body {
+    font-family: "Titillium Web", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    margin: auto;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.row {
+  margin: 0;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+}
+.mobile-only {
+  @include desktopsmall {
+    display: none;
+  }
+}
+.desktop-only {
+  @include mobile {
+    display: none;
+  }
+  @include tablet {
+    display: none;
+  }
+  @include desktopsmall {
+    display: block;
+  }
+}
+
+.hide {
+  display: none;
+}
+.show {
+  display: block !important;
+}
+
+.no-margin {
+  margin: 0;
+}
+.no-padding {
+  padding: 0;
+}
+.align-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.align-max-width {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.align-horizontally {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.align-right {
+  display: flex;
+  justify-content: flex-end;
+}
+.place-at-center {
+  display: grid;
+  place-items: center;
+}
+.noscroll {
+  overflow: hidden;
+}
+.input-box {
+  margin-bottom: 30px;
+  label {
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  input {
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 2px;
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-bottom: 1px solid #bbb;
+    &::placeholder {
+      text-transform: uppercase;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}

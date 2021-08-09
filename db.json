@@ -1,0 +1,25 @@
+{
+  "loanApplicants": [
+    {
+      "name": "Prem",
+      "email": "PREMDAS.92@GMAIL.COM",
+      "amount": "5000",
+      "loanTerm": "5",
+      "isApproved": "Rejected",
+      "date": "2021-08-09T11:33:02.095Z",
+      "id": 0.6167600419496473
+    },
+    {
+      "name": "Tuhina",
+      "email": "tuhina@gmail.com",
+      "amount": "50000",
+      "loanTerm": "10",
+      "isApproved": "Approved",
+      "date": "2021-08-09T12:21:05.349Z",
+      "paidAmount": 55000,
+      "pendingAmount": 0,
+      "emiDate": "2021-08-16T12:21:05.349Z",
+      "id": 0.695129076793547
+    }
+  ]
+}
